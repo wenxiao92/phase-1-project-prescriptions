@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
+    <!-- Compiled and minified CSS (latest version not working)
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     
-    <!-- ICONS -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--ICONS-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-    <!-- Compiled and minified JavaScript -->
+    <!-- Compiled and minified JavaScript (latest version not working)
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <title>Document</title>
-</head>
-<body>
 
+    <title>Document</title>
+  
+</head>
+<body>  
     <nav class="purple accent-2">
         <div class="nav-wrapper container">
           <a href="#" class="brand-logo" id="homepage-link">Rename me</a>
@@ -30,8 +33,22 @@
       </nav>
 
       <div class="container">
-          <div id="main"></div>
+          <div id="main">
+
+        </div>
       </div>
+
+      <div class="input-field">
+        <select>
+          <option value="" disabled selected>Choose your option</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+        <label>Materialize Select</label>
+      </div>
+
+      <div class="result"></div>
 
     <script src="javascripts/index.js"></script>
 </body>

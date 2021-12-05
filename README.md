@@ -8,4 +8,5 @@ Informational webpage on types of medicine/drugs and what they treat (purpose)
 ### Features
 * List out prescription or OTC meds/drugs (MVP)
 * Drop down for a section to toggle/filter data (MVP)
+* Using a JSON server (stretch)
 * Gives users ability to create meds/drugs (stretch)
