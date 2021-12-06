@@ -1,7 +1,6 @@
 /** Variable declaration in Global Scope**/
 const baseUrl = 'http://localhost:3000'
-
-
+let globalMed = []
 
 /** NODE declaration **/
 const mainDiv = () => document.getElementById('main')
@@ -19,16 +18,50 @@ const medListTemplate = () => {
     renderEachMed()
 }
 
-/** Renderers **/
-const renderHomePage = () => {
-    mainDiv().innerHTML = homePageTemplate() //sets the id main to have an innerHTML from homePageTemplate
+/** Other **/
+function handleDropDownList(){
+    // grabs all routes and dedupe
+    //console.log(globalMed)
+    let allRoutes = []
+    globalMed.forEach(eachData  => {
+        allRoutes.push(eachData.route[0])
+    })
+    let unique = [...new Set(allRoutes)]
+    //console.log(unique)
+
+    unique.forEach(eachRoute => {
+        let option = document.createElement('option')
+        option.setAttribute("value", `${eachRoute}`)
+        option.innerText = eachRoute
+        return option
+    })
+
+
+
+    //console.log(globalMed)
+    //console.log(allRoutes)
+    //let allRoutes = Object.keys(globalMed.route)
+    //console.log(allRoutes)
+    //const unique = [...new Set(globalMed.map(eachRoute => eachRoute.route))]
+    //console.log(unique)
 }
 
+
 function createSelect() {
+    mainDiv().innerHTML = ""
+
+    let h1 = document.createElement('h1')
+
+    h1.innerHTML = `
+    Medication/Drug List
+    `
+    
     let divTest = document.createElement('div')
     divTest.className = "input-field"
     let select = document.createElement('select')
-    select.innerHTML =`
+    handleDropDownList()
+    select.innerHTML =
+    `
                 <option value="" disabled selected>Choose your option</option>
                 <option value="1">Option 1</option>
                 <option value="2">Option 2</option>
@@ -39,36 +72,38 @@ function createSelect() {
     output.innerText = "see here"
     divTest.append(select, output)
     document.querySelector('#test').append(divTest)
-    
+    //console.log(globalMed)
     select.addEventListener('change', (e) => {
         e.preventDefault();
+        console.log(e.target.value)
         output.innerText = `You like ${e.target.value}`
     })
 
+    mainDiv().append(h1, divTest)
+    M.FormSelect.init(select); //actual initialization of the dropdown list. Needs to be in own seperate call in materialize CSS
+}
 
-    M.FormSelect.init(select);
+
+
+/** Renderers **/
+const renderHomePage = () => {
+    mainDiv().innerHTML = homePageTemplate() //sets the id main to have an innerHTML from homePageTemplate
 }
 
 function renderMeds(meds){
-    mainDiv().innerHTML = ""
+
+    createSelect()
+
     let table = document.createElement('table')
     //table.className = highlight
     let thead = document.createElement('thead')
     let tbody = document.createElement('tbody')
     thead.innerHTML = `
         <th>Brand Name / Generic Name</th>
+        <th>Human Prescripted/OTC</th>
         <th>Route of Administration</th>
         <th>Purpose</th>
-        <th>Human Prescripted/OTC</th>
     `
-    let div = document.createElement('div')
-    let h1 = document.createElement('h1')
-
-    h1.innerHTML = `
-    Medication/Drug List
-    `
-
-    div.append(h1)
     
     //renders actual meds into table
     meds.forEach((med) => {
@@ -85,7 +120,7 @@ function renderMeds(meds){
     })
 
     table.append(thead, tbody)
-    mainDiv().append(div, table)
+    mainDiv().append(table)
     //console.log(table)
 
 }
@@ -112,37 +147,16 @@ const loadMeds = () => {
     .then(resp => resp.json())
     .then(function(data) {
         //console.log(data) //test data output
+        globalMed = data
         renderMeds(data)
         })
 }
 
 /** DOM Load **/
-
-
 document.addEventListener('DOMContentLoaded', () => {
     homePageLinkEvent()
     medListLinkEvent()
-    createSelect()
-    
-    //console.log(select)
-    // elems.addEventListener('change', (e) => {
-    //     e.preventDefault()
-    //     const result = document.querySelector('.result')
-    //     result.textContent = `You like ${e.target.value}`
-    // })
-
 })
-
-//     let elems = document.querySelector('select');
-//     M.FormSelect.init(elems);
-    
-//     elems.addEventListener('change', (e) => {
-//         e.preventDefault()
-//         const result = document.querySelector('.result')
-//         result.textContent = `You like ${e.target.value}`
-//     })
-
-// })}
 
 
 /** Test code cdn specific **/
