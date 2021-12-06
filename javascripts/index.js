@@ -29,58 +29,65 @@ function handleDropDownList(){
     let unique = [...new Set(allRoutes)]
     //console.log(unique)
 
-    unique.forEach(eachRoute => {
-        let option = document.createElement('option')
-        option.setAttribute("value", `${eachRoute}`)
-        option.innerText = eachRoute
-        return option
-    })
-
-
-
-    //console.log(globalMed)
-    //console.log(allRoutes)
-    //let allRoutes = Object.keys(globalMed.route)
-    //console.log(allRoutes)
-    //const unique = [...new Set(globalMed.map(eachRoute => eachRoute.route))]
-    //console.log(unique)
+    showDropDown(unique)
 }
 
-
-function createSelect() {
+function showDropDown(uniqueRoute){
     mainDiv().innerHTML = ""
-
     let h1 = document.createElement('h1')
 
     h1.innerHTML = `
     Medication/Drug List
     `
-    
     let divTest = document.createElement('div')
     divTest.className = "input-field"
+
     let select = document.createElement('select')
-    handleDropDownList()
-    select.innerHTML =
+    select.innerHTML = `
+    <option value="" disabled selected>Choose your option</option>
     `
-                <option value="" disabled selected>Choose your option</option>
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-    `
+    uniqueRoute.forEach(eachRoute => {
+        let option = document.createElement('option')
+        option.setAttribute("value", `${eachRoute}`)
+        option.innerText = eachRoute
+        select.append(option)
+        //console.log(select) //test selection is created
+    })
     let output = document.createElement('div')
     output.className = "result"
     output.innerText = "see here"
     divTest.append(select, output)
+
     document.querySelector('#test').append(divTest)
-    //console.log(globalMed)
+
     select.addEventListener('change', (e) => {
         e.preventDefault();
         console.log(e.target.value)
         output.innerText = `You like ${e.target.value}`
     })
-
+    
+    document.querySelector('#test').append(divTest)
     mainDiv().append(h1, divTest)
-    M.FormSelect.init(select); //actual initialization of the dropdown list. Needs to be in own seperate call in materialize CSS
+    M.FormSelect.init(select) //actual initialization of the dropdown list. Needs to be in own seperate call in materialize CSS
+
+}
+
+function createSelect() {
+handleDropDownList()
+    //let output = document.createElement('div')
+    //output.className = "result"
+    //output.innerText = "see here"
+    //divTest.append(select, output)
+    //document.querySelector('#test').append(divTest)
+
+    // select.addEventListener('change', (e) => {
+    //     e.preventDefault();
+    //     console.log(e.target.value)
+    //     output.innerText = `You like ${e.target.value}`
+    // })
+
+    //mainDiv().append(h1, divTest)
+
 }
 
 
@@ -175,3 +182,40 @@ document.addEventListener('DOMContentLoaded', () => {
 //   <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
 // </ul>
 // `
+
+// function createSelect() {
+//     mainDiv().innerHTML = ""
+
+//     let h1 = document.createElement('h1')
+
+//     h1.innerHTML = `
+//     Medication/Drug List
+//     `
+    
+//     let divTest = document.createElement('div')
+//     divTest.className = "input-field"
+//     let select = document.createElement('select')
+//     handleDropDownList()
+//     select.append(handleDropDownList())
+//     // `
+//     //             <option value="" disabled selected>Choose your option</option>
+//     //             <option value="1">Option 1</option>
+//     //             <option value="2">Option 2</option>
+//     //             <option value="3">Option 3</option>
+//     // `
+//     console.log(select)
+//     let output = document.createElement('div')
+//     output.className = "result"
+//     output.innerText = "see here"
+//     divTest.append(select, output)
+//     document.querySelector('#test').append(divTest)
+//     //console.log(globalMed)
+//     select.addEventListener('change', (e) => {
+//         e.preventDefault();
+//         console.log(e.target.value)
+//         output.innerText = `You like ${e.target.value}`
+//     })
+
+//     mainDiv().append(h1, divTest)
+//     M.FormSelect.init(select); 
+// }
