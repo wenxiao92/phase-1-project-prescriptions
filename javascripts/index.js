@@ -57,20 +57,14 @@ function showDropDown(uniqueRoute){
     })
 
     divTest.append(select)
-
+    renderInit(globalMed)
     select.addEventListener('change', (e) => {
         e.preventDefault();
-
-        if(e.target.value === "ORAL"){
-            renderInit(globalMed)
-        } else {
-            console.log("error")
-        }
-
+        renderMeds(e.target.value)
     })
 
     mainDiv().append(h1, divTest)
-    renderInit(globalMed)
+    
     M.FormSelect.init(select) //actual initialization of the dropdown list. Needs to be in own seperate call in materialize CSS
 
 }
@@ -81,11 +75,17 @@ const renderHomePage = () => {
     displaySection().innerHTML = "" //removes table from home page
 }
 
-function renderTable() {
+function renderMeds(currentRoute){
+    displaySection().innerHTML = ""
+    let currentRouteArray = []
+    globalMed.forEach(medArray => {
+        if(medArray.route[0] === currentRoute){
+            currentRouteArray.push(medArray)
+        }
+    })
+    console.log(currentRouteArray) //test log to see array of routes are pulling correctly
+    
 
-}
-
-function renderInit(meds){
     let table = document.createElement('table')
     //table.className = highlight
     let thead = document.createElement('thead')
@@ -98,24 +98,22 @@ function renderInit(meds){
     `
     
     //renders actual meds into table
-    meds.forEach((med) => {
+    currentRouteArray.forEach((currentRoute) => {
 
     let tr = document.createElement('tr')
     tr.innerHTML = `
-    <td>${med.brand_name} / ${med.generic_name}</td>
-    <td>${med.product_type}</td>
-    <td>${med.route}</td>
-    <td>${med.purpose}</td>
+    <td>${currentRoute.brand_name} / ${currentRoute.generic_name}</td>
+    <td>${currentRoute.product_type}</td>
+    <td>${currentRoute.route}</td>
+    <td>${currentRoute.purpose}</td>
     `
     tbody.append(tr)
-
     })
 
     table.append(thead, tbody)
     //console.log(table)
+
     displaySection().append(table)
-
-
 }
 
 
@@ -174,39 +172,32 @@ document.addEventListener('DOMContentLoaded', () => {
 // </ul>
 // `
 
-// function createSelect() {
-//     mainDiv().innerHTML = ""
-
-//     let h1 = document.createElement('h1')
-
-//     h1.innerHTML = `
-//     Medication/Drug List
-//     `
+function renderInit(meds){
+    let table = document.createElement('table')
+    //table.className = highlight
+    let thead = document.createElement('thead')
+    let tbody = document.createElement('tbody')
+    thead.innerHTML = `
+        <th>Brand Name / Generic Name</th>
+        <th>Human Prescripted/OTC</th>
+        <th>Route of Administration</th>
+        <th>Purpose</th>
+    `
     
-//     let divTest = document.createElement('div')
-//     divTest.className = "input-field"
-//     let select = document.createElement('select')
-//     handleDropDownList()
-//     select.append(handleDropDownList())
-//     // `
-//     //             <option value="" disabled selected>Choose your option</option>
-//     //             <option value="1">Option 1</option>
-//     //             <option value="2">Option 2</option>
-//     //             <option value="3">Option 3</option>
-//     // `
-//     console.log(select)
-//     let output = document.createElement('div')
-//     output.className = "result"
-//     output.innerText = "see here"
-//     divTest.append(select, output)
-//     document.querySelector('#test').append(divTest)
-//     //console.log(globalMed)
-//     select.addEventListener('change', (e) => {
-//         e.preventDefault();
-//         console.log(e.target.value)
-//         output.innerText = `You like ${e.target.value}`
-//     })
+    //renders actual meds into table
+    meds.forEach((med) => {
 
-//     mainDiv().append(h1, divTest)
-//     M.FormSelect.init(select); 
-// }
+    let tr = document.createElement('tr')
+    tr.innerHTML = `
+    <td>${med.brand_name} / ${med.generic_name}</td>
+    <td>${med.product_type}</td>
+    <td>${med.route}</td>
+    <td>${med.purpose}</td>
+    `
+    tbody.append(tr)
+    })
+
+    table.append(thead, tbody)
+    //console.log(table)
+    displaySection().append(table)
+}
