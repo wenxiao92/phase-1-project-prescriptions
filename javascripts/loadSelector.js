@@ -11,10 +11,12 @@ const originalFunction = () => {document.addEventListener('DOMContentLoaded', fu
 
 })}
 
+originalFunction()
+
 // function display(event){
 //     event.addEventListener('click', ()=>{
 //         console.log("testing")
 //     })
 // }
 
-originalFunction()
+// 

@@ -1,17 +1,6 @@
 /** Variable declaration in Global Scope**/
 const baseUrl = 'http://localhost:3000'
-let divTest = document.createElement('div')
-divTest.innerHTML = `
-<div class="browser-default">
-<select>
-  <option value="" disabled selected>Choose your option</option>
-  <option value="1">Option 1</option>
-  <option value="2">Option 2</option>
-  <option value="3">Option 3</option>
-</select>
-<label>Materialize Select</label>
-</div>
-`
+
 
 
 /** NODE declaration **/
@@ -35,6 +24,31 @@ const renderHomePage = () => {
     mainDiv().innerHTML = homePageTemplate() //sets the id main to have an innerHTML from homePageTemplate
 }
 
+function createSelect() {
+    let divTest = document.createElement('div')
+    divTest.className = "input-field"
+    let select = document.createElement('select')
+    select.innerHTML =`
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+    `
+    let output = document.createElement('div')
+    output.className = "result"
+    output.innerText = "see here"
+    divTest.append(select, output)
+    document.querySelector('#test').append(divTest)
+    
+    select.addEventListener('change', (e) => {
+        e.preventDefault();
+        output.innerText = `You like ${e.target.value}`
+    })
+
+
+    M.FormSelect.init(select);
+}
+
 function renderMeds(meds){
     mainDiv().innerHTML = ""
     let table = document.createElement('table')
@@ -54,7 +68,7 @@ function renderMeds(meds){
     Medication/Drug List
     `
 
-    div.append(h1, divTest)
+    div.append(h1)
     
     //renders actual meds into table
     meds.forEach((med) => {
@@ -103,24 +117,33 @@ const loadMeds = () => {
 }
 
 /** DOM Load **/
+
+
 document.addEventListener('DOMContentLoaded', () => {
     homePageLinkEvent()
     medListLinkEvent()
+    createSelect()
     
+    //console.log(select)
+    // elems.addEventListener('change', (e) => {
+    //     e.preventDefault()
+    //     const result = document.querySelector('.result')
+    //     result.textContent = `You like ${e.target.value}`
+    // })
+
 })
-const originalFunction = () => {document.addEventListener('DOMContentLoaded', function() {
-    let elems = document.querySelector('select');
 
-    M.FormSelect.init(elems);
+//     let elems = document.querySelector('select');
+//     M.FormSelect.init(elems);
     
-    elems.addEventListener('change', (e) => {
-        e.preventDefault()
-        const result = document.querySelector('.result')
-        result.textContent = `You like ${e.target.value}`
-    })
+//     elems.addEventListener('change', (e) => {
+//         e.preventDefault()
+//         const result = document.querySelector('.result')
+//         result.textContent = `You like ${e.target.value}`
+//     })
 
-})}
-originalFunction()
+// })}
+
 
 /** Test code cdn specific **/
 // let divTest = document.createElement('div')
