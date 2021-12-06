@@ -6,6 +6,7 @@ let globalMed = []
 const mainDiv = () => document.getElementById('main')
 const homePageLink = () => document.getElementById('homepage-link')
 const medListLink = () => document.getElementById('medsList-link')
+const displaySection = () => document.getElementById('displaySection')
 
 /** Templates **/
 const homePageTemplate = () => {
@@ -15,7 +16,8 @@ const homePageTemplate = () => {
 }
 
 const medListTemplate = () => {
-    renderEachMed()
+    //handleDropDownList()
+    //renderEachMed()
 }
 
 /** Other **/
@@ -53,54 +55,37 @@ function showDropDown(uniqueRoute){
         select.append(option)
         //console.log(select) //test selection is created
     })
-    let output = document.createElement('div')
-    output.className = "result"
-    output.innerText = "see here"
-    divTest.append(select, output)
 
-    document.querySelector('#test').append(divTest)
+    divTest.append(select)
 
     select.addEventListener('change', (e) => {
         e.preventDefault();
-        console.log(e.target.value)
-        output.innerText = `You like ${e.target.value}`
+
+        if(e.target.value === "ORAL"){
+            renderInit(globalMed)
+        } else {
+            console.log("error")
+        }
+
     })
-    
-    document.querySelector('#test').append(divTest)
+
     mainDiv().append(h1, divTest)
+    renderInit(globalMed)
     M.FormSelect.init(select) //actual initialization of the dropdown list. Needs to be in own seperate call in materialize CSS
 
 }
 
-function createSelect() {
-handleDropDownList()
-    //let output = document.createElement('div')
-    //output.className = "result"
-    //output.innerText = "see here"
-    //divTest.append(select, output)
-    //document.querySelector('#test').append(divTest)
-
-    // select.addEventListener('change', (e) => {
-    //     e.preventDefault();
-    //     console.log(e.target.value)
-    //     output.innerText = `You like ${e.target.value}`
-    // })
-
-    //mainDiv().append(h1, divTest)
-
-}
-
-
-
 /** Renderers **/
 const renderHomePage = () => {
     mainDiv().innerHTML = homePageTemplate() //sets the id main to have an innerHTML from homePageTemplate
+    displaySection().innerHTML = "" //removes table from home page
 }
 
-function renderMeds(meds){
+function renderTable() {
 
-    createSelect()
+}
 
+function renderInit(meds){
     let table = document.createElement('table')
     //table.className = highlight
     let thead = document.createElement('thead')
@@ -127,10 +112,13 @@ function renderMeds(meds){
     })
 
     table.append(thead, tbody)
-    mainDiv().append(table)
     //console.log(table)
+    displaySection().append(table)
+
 
 }
+
+
 
 /** Event listeners in their seperate function **/
 const homePageLinkEvent = () => {
@@ -143,7 +131,9 @@ const homePageLinkEvent = () => {
 const medListLinkEvent = () => {
     medListLink().addEventListener('click', (e) => {
         e.preventDefault();
-        loadMeds() //references the JSON data
+        loadMeds()
+
+        //loadMeds() //references the JSON data
     })
 }
 
@@ -155,7 +145,8 @@ const loadMeds = () => {
     .then(function(data) {
         //console.log(data) //test data output
         globalMed = data
-        renderMeds(data)
+        //renderMeds(data)
+        handleDropDownList()
         })
 }
 
