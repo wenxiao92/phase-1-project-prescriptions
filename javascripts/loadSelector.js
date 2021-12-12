@@ -1,22 +1,31 @@
-const originalFunction = () => {document.addEventListener('DOMContentLoaded', function() {
-    let elems = document.querySelector('select');
+// const originalFunction = () => {document.addEventListener('DOMContentLoaded', function() {
+//     let elems = document.querySelector('select');
 
-    M.FormSelect.init(elems);
+//     M.FormSelect.init(elems);
     
-    elems.addEventListener('change', (e) => {
-        e.preventDefault()
-        const result = document.querySelector('.result')
-        result.textContent = `You like ${e.target.value}`
-    })
-
-})}
-
-originalFunction()
-
-// function display(event){
-//     event.addEventListener('click', ()=>{
-//         console.log("testing")
+//     elems.addEventListener('change', (e) => {
+//         e.preventDefault()
+//         const result = document.querySelector('.result')
+//         result.textContent = `You like ${e.target.value}`
 //     })
-// }
 
-// 
+// })}
+
+// originalFunction()
+
+// // function display(event){
+// //     event.addEventListener('click', ()=>{
+// //         console.log("testing")
+// //     })
+// // }
+
+// //
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     const selectElement = document.querySelector('.routeFilter');
+
+//     selectElement.addEventListener('change', (event) => {
+//       const result = document.querySelector('.result');
+//       result.textContent = `You like ${event.target.value}`;
+//     });
+// })

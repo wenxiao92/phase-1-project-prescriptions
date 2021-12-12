@@ -20,7 +20,7 @@ const medListTemplate = () => {
     //renderEachMed()
 }
 
-/** Other **/
+/** Combination function**/
 function handleDropDownList(){
     // grabs all routes and dedupe
     //console.log(globalMed)
@@ -41,8 +41,9 @@ function showDropDown(uniqueRoute){
     h1.innerHTML = `
     Medication/Drug List
     `
-    let divTest = document.createElement('div')
-    divTest.className = "input-field"
+    let label = document.createElement('label')
+    label.style.fontSize = "20px"
+    label.innerText = "Filter Route"
 
     let select = document.createElement('select')
     select.innerHTML = `
@@ -56,14 +57,14 @@ function showDropDown(uniqueRoute){
         //console.log(select) //test selection is created
     })
 
-    divTest.append(select)
+    label.append(select)
     renderInit(globalMed)
     select.addEventListener('change', (e) => {
         e.preventDefault();
-        renderMeds(e.target.value)
+        renderFilterMeds(e.target.value)
     })
 
-    mainDiv().append(h1, divTest)
+    mainDiv().append(h1, label)
     
     M.FormSelect.init(select) //actual initialization of the dropdown list. Needs to be in own seperate call in materialize CSS
 
@@ -75,7 +76,37 @@ const renderHomePage = () => {
     displaySection().innerHTML = "" //removes table from home page
 }
 
-function renderMeds(currentRoute){
+function renderInit(meds){
+    let table = document.createElement('table')
+    table.className = "highlight"
+    let thead = document.createElement('thead')
+    let tbody = document.createElement('tbody')
+    thead.innerHTML = `
+        <th>Brand Name / Generic Name</th>
+        <th>Human Prescripted/OTC</th>
+        <th>Route of Administration</th>
+        <th>Purpose</th>
+    `
+    
+    //renders actual meds into table
+    meds.forEach((med) => {
+
+    let tr = document.createElement('tr')
+    tr.innerHTML = `
+    <td>${med.brand_name} / ${med.generic_name}</td>
+    <td>${med.product_type}</td>
+    <td>${med.route}</td>
+    <td>${med.purpose}</td>
+    `
+    tbody.append(tr)
+    })
+
+    table.append(thead, tbody)
+    //console.log(table)
+    displaySection().append(table)
+}
+
+function renderFilterMeds(currentRoute){
     displaySection().innerHTML = ""
     let currentRouteArray = []
     globalMed.forEach(medArray => {
@@ -87,7 +118,7 @@ function renderMeds(currentRoute){
     
 
     let table = document.createElement('table')
-    //table.className = highlight
+    table.className = "highlight"
     let thead = document.createElement('thead')
     let tbody = document.createElement('tbody')
     thead.innerHTML = `
@@ -156,8 +187,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 /** Test code cdn specific **/
-// let divTest = document.createElement('div')
-// divTest.innerHTML = `
+// let label = document.createElement('div')
+// label.innerHTML = `
 // <!-- Dropdown Trigger -->
 // <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
 
@@ -172,32 +203,3 @@ document.addEventListener('DOMContentLoaded', () => {
 // </ul>
 // `
 
-function renderInit(meds){
-    let table = document.createElement('table')
-    //table.className = highlight
-    let thead = document.createElement('thead')
-    let tbody = document.createElement('tbody')
-    thead.innerHTML = `
-        <th>Brand Name / Generic Name</th>
-        <th>Human Prescripted/OTC</th>
-        <th>Route of Administration</th>
-        <th>Purpose</th>
-    `
-    
-    //renders actual meds into table
-    meds.forEach((med) => {
-
-    let tr = document.createElement('tr')
-    tr.innerHTML = `
-    <td>${med.brand_name} / ${med.generic_name}</td>
-    <td>${med.product_type}</td>
-    <td>${med.route}</td>
-    <td>${med.purpose}</td>
-    `
-    tbody.append(tr)
-    })
-
-    table.append(thead, tbody)
-    //console.log(table)
-    displaySection().append(table)
-}
