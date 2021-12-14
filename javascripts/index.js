@@ -20,6 +20,11 @@ const homePageTemplate = () => {
 const createMedTemplate = () => {
     mainDiv().innerHTML = ""
     displaySection().innerHTML = ""
+    let h2 = document.createElement("h2")
+    h2.className = "center-align"
+    h2.innerText = "Add your prescripted medicine/drug to the list!"
+
+    //Create the form
     let form = document.createElement('form')
     form.className = "row"
 
@@ -73,6 +78,7 @@ const createMedTemplate = () => {
     purposeLabel.setAttribute('for', "purposeInput")
     purposeDiv.append(purposeInput, purposeLabel)
 
+    //create the button
     submitBtn = document.createElement('input')
     submitBtn.classList.add('waves-effect','waves-light','btn')
     submitBtn.setAttribute('type','submit')
@@ -83,38 +89,21 @@ const createMedTemplate = () => {
     form.addEventListener('submit', submitFormEvent)
 
     //console.log(form) //see output of form
-    mainDiv().append(form)
+    mainDiv().append(h2, form)
+
+    displaySection().innerHTML = `
+    <div>
+        <h4>Try it yourself!</h4>
+        <ul></ul>
+        <li>Brand name: neti pot</li>
+        <li>Generic name: NETI POT</li>
+        <li>Prescripted or OTC: OTC</li>
+        <li>Route: Nasal</li>
+        <li>Purpose: To rinse nose and help reduce congestion</li> 
+    </div>
+    `
 
 }
-
-// function dropDownPrescriptedOTC(){
-//     // let prescribedOTCDiv = document.createElement('div')
-//     // prescribedOTCDiv.classList.add('input-field', 'col', 's6')
-//     // let prescribedOTCInput = document.createElement('input')
-//     // prescribedOTCInput.setAttribute("id", "prescribedOTCInput")
-//     // prescribedOTCInput.setAttribute("type", "text")
-//     // let prescribedOTCLabel = document.createElement('label')
-//     // prescribedOTCLabel.innerText = "Prescripted or OTC"
-//     // prescribedOTCLabel.setAttribute('for', "prescribedOTCInput")
-//     // prescribedOTCDiv.append(prescribedOTCInput, prescribedOTCLabel)
-
-//     let prescribedOTCDiv = document.createElement('div')
-//     prescribedOTCDiv.classList.add('input-field', 'col', 's6')
-//     let selectPrescribedOTC = document.createElement('select')
-//     selectPrescribedOTC.innerHTML = `
-//     <option value="" disabled selected>Choose your option</option>
-//     <option value="Prescription" disabled selected>Prescription</option>
-//     <option value="OTC" disabled selected>OTC</option>
-//     `
-    
-//     prescribedOTCDiv.append(selectPrescribedOTC)
-    
-//     //mainDiv().append(selectPrescribedOTC)
-//     console.log(prescribedOTCDiv)
-//     mainDiv().append(prescribedOTCDiv)
-//     //return prescribedOTCDiv
-//     M.FormSelect.init(selectPrescribedOTC)
-// }
 
 /** Combination function**/
 function handleDropDownList(){
@@ -267,7 +256,6 @@ const createMedLinkEvent = () => {
     createMedLink().addEventListener('click', (e) => {
         e.preventDefault();
         createMedTemplate()
-        //dropDownPrescriptedOTC()
     })
 }
 
@@ -300,6 +288,7 @@ function submitFormEvent(e){
 
 /** DOM Load **/
 document.addEventListener('DOMContentLoaded', () => {
+    renderHomePage()
     homePageLinkEvent()
     medListLinkEvent()
     createMedLinkEvent()

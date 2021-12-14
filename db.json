@@ -503,24 +503,6 @@
       "purpose": [
         "Treat high blood pressure"
       ]
-    },
-    {
-      "product_type": [
-        "OTC"
-      ],
-      "route": [
-        "ORAL"
-      ],
-      "brand_name": [
-        "Tylenol"
-      ],
-      "generic_name": [
-        "TYLENOL"
-      ],
-      "purpose": [
-        "To reduce fever"
-      ],
-      "id": 29
     }
   ]
 }
