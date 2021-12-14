@@ -2,507 +2,525 @@
   "results": [
     {
       "id": 1,
-        "product_type": [
-          "HUMAN OTC DRUG"
-        ],
-        "route": [
-          "TOPICAL"
-        ],
-        "brand_name": [
-          "Calendula Cream"
-        ],
-        "generic_name": [
-          "CALENDULA OFFICINALIS"
-        ],
+      "product_type": [
+        "HUMAN OTC DRUG"
+      ],
+      "route": [
+        "TOPICAL"
+      ],
+      "brand_name": [
+        "Calendula Cream"
+      ],
+      "generic_name": [
+        "CALENDULA OFFICINALIS"
+      ],
       "purpose": [
         "Temporary relief of symptoms associated with minor cuts, burns, sprains and bruises"
       ]
     },
     {
       "id": 2,
-        "product_type": [
-          "HUMAN OTC DRUG"
-        ],
-        "route": [
-          "ORAL"
-        ],
-        "brand_name": [
-          "Tussin Cough and Chest Congestion DM adult"
-        ],
-        "generic_name": [
-          "DEXTROMETHORPHAN HBR, GUAIFENESIN"
-        ],
+      "product_type": [
+        "HUMAN OTC DRUG"
+      ],
+      "route": [
+        "ORAL"
+      ],
+      "brand_name": [
+        "Tussin Cough and Chest Congestion DM adult"
+      ],
+      "generic_name": [
+        "DEXTROMETHORPHAN HBR, GUAIFENESIN"
+      ],
       "purpose": [
         "Cough suppressant Expectorant"
       ]
     },
     {
       "id": 3,
-        "product_type": [
-          "HUMAN OTC DRUG"
-        ],
-        "route": [
-          "TOPICAL"
-        ],
-        "brand_name": [
-          "LBEL EFFET PARFAIT SIGNS OF AGE APPEARANCE MINIMIZER FOUNDATION SPF 20 FM CLAIRE 2"
-        ],
-        "generic_name": [
-          "OCTINOXATE, TITANIUM DIOXIDE"
-        ],
+      "product_type": [
+        "HUMAN OTC DRUG"
+      ],
+      "route": [
+        "TOPICAL"
+      ],
+      "brand_name": [
+        "LBEL EFFET PARFAIT SIGNS OF AGE APPEARANCE MINIMIZER FOUNDATION SPF 20 FM CLAIRE 2"
+      ],
+      "generic_name": [
+        "OCTINOXATE, TITANIUM DIOXIDE"
+      ],
       "purpose": [
         "Helps prevent sunburn"
       ]
     },
     {
       "id": 4,
-        "product_type": [
-          "HUMAN OTC DRUG"
-        ],
-        "route": [
-          "TOPICAL"
-        ],
-        "brand_name": [
-          "SPF 50 Mineral Sunscreen Babyganics"
-        ],
-        "generic_name": [
-          "TITANIUM DIOXIDE AND ZINC OXIDE"
-        ],
+      "product_type": [
+        "HUMAN OTC DRUG"
+      ],
+      "route": [
+        "TOPICAL"
+      ],
+      "brand_name": [
+        "SPF 50 Mineral Sunscreen Babyganics"
+      ],
+      "generic_name": [
+        "TITANIUM DIOXIDE AND ZINC OXIDE"
+      ],
       "purpose": [
         "Sunscreen"
       ]
     },
     {
       "id": 5,
-        "product_type": [
-          "HUMAN OTC DRUG"
-        ],
-        "route": [
-          "TOPICAL"
-        ],
-        "brand_name": [
-          "anti-bacterial hand gel"
-        ],
-        "generic_name": [
-          "HAND SANITIZER"
-        ],
+      "product_type": [
+        "HUMAN OTC DRUG"
+      ],
+      "route": [
+        "TOPICAL"
+      ],
+      "brand_name": [
+        "anti-bacterial hand gel"
+      ],
+      "generic_name": [
+        "HAND SANITIZER"
+      ],
       "purpose": [
         "Antiseptic, Hand Sanitizer"
       ]
     },
     {
       "id": 6,
-        "product_type": [
-          "HUMAN OTC DRUG"
-        ],
-        "route": [
-          "ORAL"
-        ],
-        "brand_name": [
-          "wal dryl allergy childrens"
-        ],
-        "generic_name": [
-          "DIPHENHYDRAMINE HYDROCHLORIDE"
-        ],
+      "product_type": [
+        "HUMAN OTC DRUG"
+      ],
+      "route": [
+        "ORAL"
+      ],
+      "brand_name": [
+        "wal dryl allergy childrens"
+      ],
+      "generic_name": [
+        "DIPHENHYDRAMINE HYDROCHLORIDE"
+      ],
       "purpose": [
         "Antihistamine and Nasal decongestant"
       ]
     },
     {
       "id": 7,
-        "product_type": [
-          "HUMAN OTC DRUG"
-        ],
-        "route": [
-          "ORAL"
-        ],
-        "brand_name": [
-          "Sinus Relief Maximum Strength"
-        ],
-        "generic_name": [
-          "ACETAMINOPHEN, DEXTROMETHORPHAN HBR, GUAIFENESIN, PHENYLEPHRINE HCL"
-        ],
+      "product_type": [
+        "HUMAN OTC DRUG"
+      ],
+      "route": [
+        "ORAL"
+      ],
+      "brand_name": [
+        "Sinus Relief Maximum Strength"
+      ],
+      "generic_name": [
+        "ACETAMINOPHEN, DEXTROMETHORPHAN HBR, GUAIFENESIN, PHENYLEPHRINE HCL"
+      ],
       "purpose": [
         "Pain reliever Cough suppressant and Expectorant Nasal decongestant"
       ]
     },
     {
       "id": 8,
-        "product_type": [
-          "HUMAN OTC DRUG"
-        ],
-        "route": [
-          "ORAL"
-        ],
-        "brand_name": [
-          "Mucus Relief"
-        ],
-        "generic_name": [
-          "GUAIFENESIN"
-        ],
+      "product_type": [
+        "HUMAN OTC DRUG"
+      ],
+      "route": [
+        "ORAL"
+      ],
+      "brand_name": [
+        "Mucus Relief"
+      ],
+      "generic_name": [
+        "GUAIFENESIN"
+      ],
       "purpose": [
         "Expectorant"
       ]
     },
     {
       "id": 9,
-        "product_type": [
-          "HUMAN PRESCRIPTION DRUG"
-        ],
-        "route": [
-          "ORAL"
-        ],
-        "brand_name": [
-          "Adderall"
-        ],
-        "generic_name": [
-          "amphetamine"
-        ],
+      "product_type": [
+        "HUMAN PRESCRIPTION DRUG"
+      ],
+      "route": [
+        "ORAL"
+      ],
+      "brand_name": [
+        "Adderall"
+      ],
+      "generic_name": [
+        "amphetamine"
+      ],
       "purpose": [
         "Treat symptoms of hyperactivity and for impulse control"
       ]
     },
     {
       "id": 10,
-        "product_type": [
-          "HUMAN PRESCRIPTION DRUG"
-        ],
-        "route": [
-          "ORAL"
-        ],
-        "brand_name": [
-          "Prednisone"
-        ],
-        "generic_name": [
-          "PREDNISONE"
-        ],
+      "product_type": [
+        "HUMAN PRESCRIPTION DRUG"
+      ],
+      "route": [
+        "ORAL"
+      ],
+      "brand_name": [
+        "Prednisone"
+      ],
+      "generic_name": [
+        "PREDNISONE"
+      ],
       "purpose": [
         "Treat conditions such as arthritis, blood disorders, breathing problems, severe allergies, skin diseases, cancer, eye problems, and immune system disorders"
       ]
     },
     {
       "id": 11,
-        "product_type": [
-          "HUMAN OTC DRUG"
-        ],
-        "route": [
-          "TOPICAL"
-        ],
-        "brand_name": [
-          "Anti Fungal"
-        ],
-        "generic_name": [
-          "COLTRIMAZOLE"
-        ],
+      "product_type": [
+        "HUMAN OTC DRUG"
+      ],
+      "route": [
+        "TOPICAL"
+      ],
+      "brand_name": [
+        "Anti Fungal"
+      ],
+      "generic_name": [
+        "COLTRIMAZOLE"
+      ],
       "purpose": [
         "Coltrimazole 1% Antifungal"
       ]
     },
     {
       "id": 12,
-        "product_type": [
-          "HUMAN PRESCRIPTION DRUG"
-        ],
-        "route": [
-          "ORAL"
-        ],
-        "brand_name": [
-          "Cefuroxime axetil"
-        ],
-        "generic_name": [
-          "CEFUROXIME AXETIL"
-        ],
+      "product_type": [
+        "HUMAN PRESCRIPTION DRUG"
+      ],
+      "route": [
+        "ORAL"
+      ],
+      "brand_name": [
+        "Cefuroxime axetil"
+      ],
+      "generic_name": [
+        "CEFUROXIME AXETIL"
+      ],
       "purpose": [
         "Use to treat a wide variety of bacterial infections"
       ]
     },
     {
       "id": 13,
-        "product_type": [
-          "HUMAN PRESCRIPTION DRUG"
-        ],
-        "route": [
-          "ORAL"
-        ],
-        "brand_name": [
-          "Paroxetine"
-        ],
-        "generic_name": [
-          "PAROXETINE HYDROCHLORIDE HEMIHYDRATE"
-        ],
+      "product_type": [
+        "HUMAN PRESCRIPTION DRUG"
+      ],
+      "route": [
+        "ORAL"
+      ],
+      "brand_name": [
+        "Paroxetine"
+      ],
+      "generic_name": [
+        "PAROXETINE HYDROCHLORIDE HEMIHYDRATE"
+      ],
       "purpose": [
         "Use to treat depression, panic attacks, obsessive-compulsive disorder (OCD), anxiety disorders, and post-traumatic stress disorder"
       ]
     },
     {
       "id": 14,
-        "product_type": [
-          "HUMAN PRESCRIPTION DRUG"
-        ],
-        "route": [
-          "ORAL"
-        ],
-        "brand_name": [
-          "LEVETIRACETAM"
-        ],
-        "generic_name": [
-          "LEVETIRACETAM"
-        ],
+      "product_type": [
+        "HUMAN PRESCRIPTION DRUG"
+      ],
+      "route": [
+        "ORAL"
+      ],
+      "brand_name": [
+        "LEVETIRACETAM"
+      ],
+      "generic_name": [
+        "LEVETIRACETAM"
+      ],
       "purpose": [
         "Use to treat seizures (epilepsy)"
       ]
     },
     {
       "id": 15,
-        "product_type": [
-          "HUMAN PRESCRIPTION DRUG"
-        ],
-        "route": [
-          "ORAL"
-        ],
-        "brand_name": [
-          "Estradiol"
-        ],
-        "generic_name": [
-          "ESTRADIOL"
-        ],
+      "product_type": [
+        "HUMAN PRESCRIPTION DRUG"
+      ],
+      "route": [
+        "ORAL"
+      ],
+      "brand_name": [
+        "Estradiol"
+      ],
+      "generic_name": [
+        "ESTRADIOL"
+      ],
       "purpose": [
         "Use to help reduce symptoms of menopause"
       ]
     },
     {
       "id": 16,
-        "product_type": [
-          "HUMAN PRESCRIPTION DRUG"
-        ],
-        "route": [
-          "OPHTHALMIC"
-        ],
-        "brand_name": [
-          "Difluprednate"
-        ],
-        "generic_name": [
-          "DIFLUPREDNATE OPHTHALMIC"
-        ],
+      "product_type": [
+        "HUMAN PRESCRIPTION DRUG"
+      ],
+      "route": [
+        "OPHTHALMIC"
+      ],
+      "brand_name": [
+        "Difluprednate"
+      ],
+      "generic_name": [
+        "DIFLUPREDNATE OPHTHALMIC"
+      ],
       "purpose": [
         "Treat swelling and pain after eye surgery and certain serious eye problem (endogenous anterior uveitis)"
       ]
     },
     {
       "id": 17,
-        "product_type": [
-          "HUMAN PRESCRIPTION DRUG"
-        ],
-        "route": [
-          "ORAL"
-        ],
-        "brand_name": [
-          "VALPROIC ACID"
-        ],
-        "generic_name": [
-          "VALPROIC ACID"
-        ],
+      "product_type": [
+        "HUMAN PRESCRIPTION DRUG"
+      ],
+      "route": [
+        "ORAL"
+      ],
+      "brand_name": [
+        "VALPROIC ACID"
+      ],
+      "generic_name": [
+        "VALPROIC ACID"
+      ],
       "purpose": [
         "Use to treat seizure disorders, mental/mood conditions (such as manic phase of bipolar disorder), and to prevent migraine headaches"
       ]
     },
     {
       "id": 18,
-        "product_type": [
-          "HUMAN OTC DRUG"
-        ],
-        "route": [
-          "ORAL"
-        ],
-        "brand_name": [
-          "HARRIS TEETER ACID REDUCER COMPLETE"
-        ],
-        "generic_name": [
-          "VALPROIC ACID"
-        ],
+      "product_type": [
+        "HUMAN OTC DRUG"
+      ],
+      "route": [
+        "ORAL"
+      ],
+      "brand_name": [
+        "HARRIS TEETER ACID REDUCER COMPLETE"
+      ],
+      "generic_name": [
+        "VALPROIC ACID"
+      ],
       "purpose": [
         "Acid reducer and Antacid"
       ]
     },
     {
       "id": 19,
-        "product_type": [
-          "HUMAN OTC DRUG"
-        ],
-        "route": [
-          "ORAL"
-        ],
-        "brand_name": [
-          "CVS Naturals"
-        ],
-        "generic_name": [
-          "CALCIUM CARBONATE"
-        ],
+      "product_type": [
+        "HUMAN OTC DRUG"
+      ],
+      "route": [
+        "ORAL"
+      ],
+      "brand_name": [
+        "CVS Naturals"
+      ],
+      "generic_name": [
+        "CALCIUM CARBONATE"
+      ],
       "purpose": [
         "Antacid"
       ]
     },
     {
       "id": 20,
-        "product_type": [
-          "HUMAN OTC DRUG"
-        ],
-        "route": [
-          "ORAL"
-        ],
-        "brand_name": [
-          "Epsom Salt"
-        ],
-        "generic_name": [
-          "MAGNESIUM SULFATE"
-        ],
+      "product_type": [
+        "HUMAN OTC DRUG"
+      ],
+      "route": [
+        "ORAL"
+      ],
+      "brand_name": [
+        "Epsom Salt"
+      ],
+      "generic_name": [
+        "MAGNESIUM SULFATE"
+      ],
       "purpose": [
         "Saline laxative"
       ]
     },
     {
       "id": 21,
-        "product_type": [
-          "HUMAN PRESCRIPTION DRUG"
-        ],
-        "route": [
-          "ORAL"
-        ],
-        "brand_name": [
-          "Celecoxib"
-        ],
-        "generic_name": [
-          "CELECOXIB"
-        ],
+      "product_type": [
+        "HUMAN PRESCRIPTION DRUG"
+      ],
+      "route": [
+        "ORAL"
+      ],
+      "brand_name": [
+        "Celecoxib"
+      ],
+      "generic_name": [
+        "CELECOXIB"
+      ],
       "purpose": [
         "Used to treat arthritis, acute pain, and menstrual pain and discomfort"
       ]
     },
     {
       "id": 22,
-        "product_type": [
-          "HUMAN OTC DRUG"
-        ],
-        "route": [
-          "TOPICAL"
-        ],
-        "brand_name": [
-          "Englewood Amenity"
-        ],
-        "generic_name": [
-          "BENZALKONIUM CHLORIDE AND SODIUM MONOFLUOROPHOSPHATE"
-        ],
+      "product_type": [
+        "HUMAN OTC DRUG"
+      ],
+      "route": [
+        "TOPICAL"
+      ],
+      "brand_name": [
+        "Englewood Amenity"
+      ],
+      "generic_name": [
+        "BENZALKONIUM CHLORIDE AND SODIUM MONOFLUOROPHOSPHATE"
+      ],
       "purpose": [
         "Antiseptic"
       ]
     },
     {
       "id": 23,
-        "product_type": [
-          "HUMAN PRESCRIPTION DRUG"
-        ],
-        "route": [
-          "INTRAMUSCULAR"
-        ],
-        "brand_name": [
-          "Methylprednisolone Sodium Succinate"
-        ],
-        "generic_name": [
-          "METHYLPREDNISOLONE"
-        ],
+      "product_type": [
+        "HUMAN PRESCRIPTION DRUG"
+      ],
+      "route": [
+        "INTRAMUSCULAR"
+      ],
+      "brand_name": [
+        "Methylprednisolone Sodium Succinate"
+      ],
+      "generic_name": [
+        "METHYLPREDNISOLONE"
+      ],
       "purpose": [
         "Use to treat conditions such as arthritis, blood disorders, severe allergic reactions, certain cancers, eye conditions, skin/kidney/intestinal/lung diseases, and immune system disorders"
       ]
     },
     {
       "id": 24,
-        "product_type": [
-          "HUMAN OTC DRUG"
-        ],
-        "route": [
-          "ORAL"
-        ],
-        "brand_name": [
-          "Aleve Caplets"
-        ],
-        "generic_name": [
-          "NAPROXEN SODIUM"
-        ],
+      "product_type": [
+        "HUMAN OTC DRUG"
+      ],
+      "route": [
+        "ORAL"
+      ],
+      "brand_name": [
+        "Aleve Caplets"
+      ],
+      "generic_name": [
+        "NAPROXEN SODIUM"
+      ],
       "purpose": [
         "Pain reliever/fever reducer"
       ]
     },
     {
       "id": 25,
-        "product_type": [
-          "HUMAN OTC DRUG"
-        ],
-        "route": [
-          "ORAL"
-        ],
-        "brand_name": [
-          "HEB Honey Lemon Cough Drops"
-        ],
-        "generic_name": [
-          "MENTHOL"
-        ],
+      "product_type": [
+        "HUMAN OTC DRUG"
+      ],
+      "route": [
+        "ORAL"
+      ],
+      "brand_name": [
+        "HEB Honey Lemon Cough Drops"
+      ],
+      "generic_name": [
+        "MENTHOL"
+      ],
       "purpose": [
         "Cough suppressant / Oral anesthetic"
       ]
     },
     {
       "id": 26,
-        "product_type": [
-          "HUMAN OTC DRUG"
-        ],
-        "route": [
-          "TOPICAL"
-        ],
-        "brand_name": [
-          "Gerigentle-Vitamins A and D"
-        ],
-        "generic_name": [
-          "PETROLATUM"
-        ],
+      "product_type": [
+        "HUMAN OTC DRUG"
+      ],
+      "route": [
+        "TOPICAL"
+      ],
+      "brand_name": [
+        "Gerigentle-Vitamins A and D"
+      ],
+      "generic_name": [
+        "PETROLATUM"
+      ],
       "purpose": [
         "Skin Protectant"
       ]
     },
     {
       "id": 27,
-        "product_type": [
-          "HUMAN PRESCRIPTION DRUG"
-        ],
-        "route": [
-          "INTRAVENOUS"
-        ],
-        "brand_name": [
-          "Metoprolol Tartrate"
-        ],
-        "generic_name": [
-          "METOPROLOL TARTRATE"
-        ],
+      "product_type": [
+        "HUMAN PRESCRIPTION DRUG"
+      ],
+      "route": [
+        "INTRAVENOUS"
+      ],
+      "brand_name": [
+        "Metoprolol Tartrate"
+      ],
+      "generic_name": [
+        "METOPROLOL TARTRATE"
+      ],
       "purpose": [
         "Treat high blood pressure"
       ]
     },
     {
       "id": 28,
-        "product_type": [
-          "HUMAN PRESCRIPTION DRUG"
-        ],
-        "route": [
-          "ORAL"
-        ],
-        "brand_name": [
-          "terazosin"
-        ],
-        "generic_name": [
-          "TERAZOSIN"
-        ],
+      "product_type": [
+        "HUMAN PRESCRIPTION DRUG"
+      ],
+      "route": [
+        "ORAL"
+      ],
+      "brand_name": [
+        "terazosin"
+      ],
+      "generic_name": [
+        "TERAZOSIN"
+      ],
       "purpose": [
         "Treat high blood pressure"
       ]
+    },
+    {
+      "product_type": [
+        "OTC"
+      ],
+      "route": [
+        "ORAL"
+      ],
+      "brand_name": [
+        "Tylenol"
+      ],
+      "generic_name": [
+        "TYLENOL"
+      ],
+      "purpose": [
+        "To reduce fever"
+      ],
+      "id": 29
     }
- ]
+  ]
 }

@@ -13,19 +13,11 @@
 
 // originalFunction()
 
-// // function display(event){
-// //     event.addEventListener('click', ()=>{
-// //         console.log("testing")
-// //     })
-// // }
+// function display(event){
+//     event.addEventListener('click', ()=>{
+//         console.log("testing")
+//     })
+// }
 
-// //
+//
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     const selectElement = document.querySelector('.routeFilter');
-
-//     selectElement.addEventListener('change', (event) => {
-//       const result = document.querySelector('.result');
-//       result.textContent = `You like ${event.target.value}`;
-//     });
-// })

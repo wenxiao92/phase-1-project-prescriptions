@@ -7,18 +7,114 @@ const mainDiv = () => document.getElementById('main')
 const homePageLink = () => document.getElementById('homepage-link')
 const medListLink = () => document.getElementById('medsList-link')
 const displaySection = () => document.getElementById('displaySection')
+const createMedLink = () => document.getElementById('createMeds-link')
 
 /** Templates **/
 const homePageTemplate = () => {
     return `
-    <h1 class="center-align">Fill Out Later</h1>
+    <h1 class="center-align"> Welcome! </h1>
+    <p class='center-align'> Please click the Meds/Drugs List or Create Meds/Drugs to get started! </p>
     `
 }
 
-const medListTemplate = () => {
-    //handleDropDownList()
-    //renderEachMed()
+const createMedTemplate = () => {
+    mainDiv().innerHTML = ""
+    displaySection().innerHTML = ""
+    let form = document.createElement('form')
+    form.className = "row"
+
+    let brandNameDiv = document.createElement('div')
+    brandNameDiv.classList.add('input-field', 'col', 's6')
+    let brandInput = document.createElement('input')
+    brandInput.setAttribute("id", "brandNameInput")
+    brandInput.setAttribute("type", "text")
+    let brandLabel = document.createElement('label')
+    brandLabel.innerText = "Brand Name"
+    brandLabel.setAttribute('for', "brandNameInput")
+    brandNameDiv.append(brandInput, brandLabel)
+
+    let genericNameDiv = document.createElement('div')
+    genericNameDiv.classList.add('input-field', 'col', 's6')
+    let genericInput = document.createElement('input')
+    genericInput.setAttribute("id", "genericNameInput")
+    genericInput.setAttribute("type", "text")
+    let genericLabel = document.createElement('label')
+    genericLabel.innerText = "Generic Name"
+    genericLabel.setAttribute('for', "genericNameInput")
+    genericNameDiv.append(genericInput, genericLabel)
+
+    let prescribedOTCDiv = document.createElement('div')
+    prescribedOTCDiv.classList.add('input-field', 'col', 's6')
+    let prescribedOTCInput = document.createElement('input')
+    prescribedOTCInput.setAttribute("id", "prescribedOTCInput")
+    prescribedOTCInput.setAttribute("type", "text")
+    let prescribedOTCLabel = document.createElement('label')
+    prescribedOTCLabel.innerText = "Prescripted or OTC"
+    prescribedOTCLabel.setAttribute('for', "prescribedOTCInput")
+    prescribedOTCDiv.append(prescribedOTCInput, prescribedOTCLabel)
+
+    let routeDiv = document.createElement('div')
+    routeDiv.classList.add('input-field', 'col', 's6')
+    let routeInput = document.createElement('input')
+    routeInput.setAttribute("id", "routeInput")
+    routeInput.setAttribute("type", "text")
+    let routeLabel = document.createElement('label')
+    routeLabel.innerText = "Route"
+    routeLabel.setAttribute('for', "routeInput")
+    routeDiv.append(routeInput, routeLabel)
+
+    let purposeDiv = document.createElement('div')
+    purposeDiv.classList.add('input-field', 'col', 's12')
+    let purposeInput = document.createElement('input')
+    purposeInput.setAttribute("id", "purposeInput")
+    purposeInput.setAttribute("type", "text")
+    let purposeLabel = document.createElement('label')
+    purposeLabel.innerText = "Purpose"
+    purposeLabel.setAttribute('for', "purposeInput")
+    purposeDiv.append(purposeInput, purposeLabel)
+
+    submitBtn = document.createElement('input')
+    submitBtn.classList.add('waves-effect','waves-light','btn')
+    submitBtn.setAttribute('type','submit')
+    submitBtn.setAttribute('value','Create Medication/Drug')
+
+    form.append(brandNameDiv, genericNameDiv, prescribedOTCDiv, routeDiv, purposeDiv, submitBtn)
+    
+    form.addEventListener('submit', submitFormEvent)
+
+    //console.log(form) //see output of form
+    mainDiv().append(form)
+
 }
+
+// function dropDownPrescriptedOTC(){
+//     // let prescribedOTCDiv = document.createElement('div')
+//     // prescribedOTCDiv.classList.add('input-field', 'col', 's6')
+//     // let prescribedOTCInput = document.createElement('input')
+//     // prescribedOTCInput.setAttribute("id", "prescribedOTCInput")
+//     // prescribedOTCInput.setAttribute("type", "text")
+//     // let prescribedOTCLabel = document.createElement('label')
+//     // prescribedOTCLabel.innerText = "Prescripted or OTC"
+//     // prescribedOTCLabel.setAttribute('for', "prescribedOTCInput")
+//     // prescribedOTCDiv.append(prescribedOTCInput, prescribedOTCLabel)
+
+//     let prescribedOTCDiv = document.createElement('div')
+//     prescribedOTCDiv.classList.add('input-field', 'col', 's6')
+//     let selectPrescribedOTC = document.createElement('select')
+//     selectPrescribedOTC.innerHTML = `
+//     <option value="" disabled selected>Choose your option</option>
+//     <option value="Prescription" disabled selected>Prescription</option>
+//     <option value="OTC" disabled selected>OTC</option>
+//     `
+    
+//     prescribedOTCDiv.append(selectPrescribedOTC)
+    
+//     //mainDiv().append(selectPrescribedOTC)
+//     console.log(prescribedOTCDiv)
+//     mainDiv().append(prescribedOTCDiv)
+//     //return prescribedOTCDiv
+//     M.FormSelect.init(selectPrescribedOTC)
+// }
 
 /** Combination function**/
 function handleDropDownList(){
@@ -36,6 +132,7 @@ function handleDropDownList(){
 
 function showDropDown(uniqueRoute){
     mainDiv().innerHTML = ""
+    displaySection().innerHTML = ""
     let h1 = document.createElement('h1')
 
     h1.innerHTML = `
@@ -58,7 +155,9 @@ function showDropDown(uniqueRoute){
     })
 
     label.append(select)
+
     renderInit(globalMed)
+
     select.addEventListener('change', (e) => {
         e.preventDefault();
         renderFilterMeds(e.target.value)
@@ -160,12 +259,51 @@ const homePageLinkEvent = () => {
 const medListLinkEvent = () => {
     medListLink().addEventListener('click', (e) => {
         e.preventDefault();
-        loadMeds()
-
-        //loadMeds() //references the JSON data
+        loadMeds() //references the JSON data
     })
 }
 
+const createMedLinkEvent = () => {
+    createMedLink().addEventListener('click', (e) => {
+        e.preventDefault();
+        createMedTemplate()
+        //dropDownPrescriptedOTC()
+    })
+}
+
+function submitFormEvent(e){
+    e.preventDefault();
+    // const brandName = e.target.children[0];
+    // const genericName = e.target.children[1]
+    // const prescriptedOTCField = e.target.children[2]
+    // const routeField = e.target.children[3]
+    // const purposeField = e.target.children[4]
+    const[brandName, genericName, prescriptedOTCField, routeField, purposeField] = e.target.children; //mass assignment of Node array
+    //console.log(brandName.children[0].value, genericName.children[0].value, prescriptedOTCField.children[0].value, routeField.children[0].value, purposeField.children[0].value)
+    fetch('http://localhost:3000/results', {
+        method: "POST",
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            product_type: [prescriptedOTCField.children[0].value],
+            route: [routeField.children[0].value],
+            brand_name: [brandName.children[0].value],
+            generic_name: [genericName.children[0].value],
+            purpose: [purposeField.children[0].value]
+        })
+        
+    })
+}
+
+
+/** DOM Load **/
+document.addEventListener('DOMContentLoaded', () => {
+    homePageLinkEvent()
+    medListLinkEvent()
+    createMedLinkEvent()
+})
 
 /** JSON data **/
 const loadMeds = () => {
@@ -178,13 +316,6 @@ const loadMeds = () => {
         handleDropDownList()
         })
 }
-
-/** DOM Load **/
-document.addEventListener('DOMContentLoaded', () => {
-    homePageLinkEvent()
-    medListLinkEvent()
-})
-
 
 /** Test code cdn specific **/
 // let label = document.createElement('div')
