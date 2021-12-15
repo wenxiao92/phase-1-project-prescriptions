@@ -174,18 +174,35 @@ function renderInit(meds){
         <th>Human Prescripted/OTC</th>
         <th>Route of Administration</th>
         <th>Purpose</th>
+        <th>Delete button</th>
     `
     
     //renders actual meds into table
     meds.forEach((med) => {
 
     let tr = document.createElement('tr')
+    let btn = document.createElement('button')
+    btn.innerText = "delete"
+
     tr.innerHTML = `
     <td>${med.brand_name} / ${med.generic_name}</td>
     <td>${med.product_type}</td>
     <td>${med.route}</td>
     <td>${med.purpose}</td>
     `
+    //console.log(btn)
+    tr.append(btn)
+
+    btn.addEventListener('click', function(e){
+        e.preventDefault();
+
+        //console.log(tr) //grabbing instances of what each data point for that button
+        //console.log(med.id) //grabs instance of id
+        tr.remove() //removes the instance
+        removeData(med.id) //function to delete request
+
+    })
+
     tbody.append(tr)
     })
 
@@ -193,6 +210,8 @@ function renderInit(meds){
     //console.log(table)
     displaySection().append(table)
 }
+
+
 
 function renderFilterMeds(currentRoute){
     displaySection().innerHTML = ""
@@ -304,6 +323,17 @@ const loadMeds = () => {
         //renderMeds(data)
         handleDropDownList()
         })
+}
+
+function removeData(currentid) {
+    //console.log(`${baseUrl}/results/${currentid}`)
+    fetch(`${baseUrl}/results/${currentid}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+
 }
 
 /** Test code cdn specific **/
